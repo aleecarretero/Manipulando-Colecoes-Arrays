@@ -48,8 +48,8 @@ $correntistas_e_compras = [
     "12"
 ];
 
-// var_dump($correntistas_e_compras) . PHP_EOL;
+var_dump($correntistas_e_compras) . PHP_EOL;
 
-ArrayUtils::remover("Giovanni",$correntistas_e_compras);
+ArrayUtils::remover("12",$correntistas_e_compras);
 
-// var_dump($correntistas_e_compras);
+var_dump($correntistas_e_compras);
