@@ -1,21 +1,22 @@
 <?php
 
-class Calculadora {
+class Calculadora
+{
+    public function calculaMedia(array $notas): ?float
+    {
+        $quantidadeNotas = sizeof($notas);
 
-    public function calculaMedia(array $notas): float {
-        $tamanhoArray = sizeof($notas);
-
-        if ($tamanhoArray > 0) {
+        if ($quantidadeNotas !== 0) {
             $soma = 0;
-            for ($i = 0; $i < $tamanhoArray; $i++) {
-                $soma += $notas[$i];
+            for ($i = 0; $i < $quantidadeNotas; $i++) {
+                $soma = $soma + $notas[$i];
             }
-            $media = $soma / $tamanhoArray;
+        
+            $media = $soma / $quantidadeNotas;
         
             return $media;
         } else {
             return null;
         }
     }
-
 }
