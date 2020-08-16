@@ -1,24 +1,40 @@
 <?php declare(strict_types=1);
 
-require 'ArrayUtils.php';
+namespace Alura;
 
-$correntistas_e_compras = [
+require "autoloader.php";
+
+$correntistas = [
     "Giovanni",
     "João",
-    12,
     "Maria",
-    25,
     "Luis",
     "Luisa",
-    "12",
+    "Rafael"
 ];
+
+$saldos = [
+    2500,
+    3000,
+    4400,
+    1000,
+    8700,
+    9000
+];
+
+$relacionados = array_combine($correntistas, $saldos);
+
+$correntistasMaior = ArrayUtils::encontrarSaldoMaior(3000,$relacionados);
 
 echo "<pre>";
 
-var_dump($correntistas_e_compras);
+var_dump($relacionados);
 
-ArrayUtils::remover(12, $correntistas_e_compras);
-
-var_dump($correntistas_e_compras);
+var_dump($correntistasMaior);
 
 echo "</pre>";
+
+echo "<p>";
+echo "O saldo de Giovanni é {$relacionados["Giovanni"]}";
+echo "</p>";
+
